@@ -21,7 +21,7 @@ function yesAnswer() {
     }
 }
 
-// Function to move the "No" button
+// Function to move the "No" button on both hover (desktop) and click/tap (mobile)
 function moveButton() {
     const noButton = document.getElementById("noButton");
     const maxWidth = window.innerWidth - noButton.offsetWidth - 40;
@@ -35,7 +35,7 @@ function moveButton() {
     x = Math.max(20, Math.min(x, maxWidth));
     y = Math.max(20, Math.min(y, maxHeight));
 
-    noButton.style.transitionDuration = `${speed}s`; 
+    noButton.style.transition = `top ${speed}s ease, left ${speed}s ease`;
     noButton.style.left = `${x}px`;
     noButton.style.top = `${y}px`;
 }
@@ -45,13 +45,15 @@ function isMobileDevice() {
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 }
 
-// Attach event listeners
+// Attach event listeners for both desktop and mobile
 const noButton = document.getElementById("noButton");
 
 if (isMobileDevice()) {
-    noButton.addEventListener("touchstart", moveButton);
+    noButton.addEventListener("touchstart", moveButton);  // Move on touch
+    noButton.addEventListener("click", moveButton);       // Move on tap
 } else {
-    noButton.addEventListener("mouseover", moveButton);
+    noButton.addEventListener("mouseover", moveButton);   // Move on hover (desktop)
+    noButton.addEventListener("click", moveButton);       // Move on click (desktop)
 }
 
 // Floating hearts appearing randomly
