@@ -28,6 +28,12 @@ h1 {
     100% { transform: scale(1); }
 }
 
+.button-container {
+    position: relative;
+    width: 300px;
+    height: 100px;
+}
+
 .btn {
     font-size: 20px;
     padding: 14px 32px;
@@ -56,11 +62,8 @@ h1 {
     color: #ff4d4d;
     border: 2px solid #ff4d4d;
     position: absolute;
-    transition: transform 0.2s ease-in-out, left 0.3s ease-in-out, top 0.3s ease-in-out;
-}
-
-.no:hover {
-    transform: scale(1.2) rotate(10deg);
+    left: 50px;
+    top: 50px;
 }
 
 @keyframes shake {
