@@ -21,6 +21,7 @@ function yesAnswer() {
     }
 }
 
+// Function to move the "No" button
 function moveButton() {
     const noButton = document.getElementById("noButton");
     const maxWidth = window.innerWidth - noButton.offsetWidth - 40;
@@ -37,6 +38,20 @@ function moveButton() {
     noButton.style.transitionDuration = `${speed}s`; 
     noButton.style.left = `${x}px`;
     noButton.style.top = `${y}px`;
+}
+
+// Detect if it's a mobile device
+function isMobileDevice() {
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
+
+// Attach event listeners
+const noButton = document.getElementById("noButton");
+
+if (isMobileDevice()) {
+    noButton.addEventListener("touchstart", moveButton);
+} else {
+    noButton.addEventListener("mouseover", moveButton);
 }
 
 // Floating hearts appearing randomly
