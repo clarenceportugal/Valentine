@@ -31,8 +31,8 @@ function moveButton() {
     x = Math.max(20, Math.min(x, maxWidth));
     y = Math.max(20, Math.min(y, maxHeight));
 
-    noButton.style.left = ${x}px;
-    noButton.style.top = ${y}px;
+    noButton.style.left = `${x}px`;
+    noButton.style.top = `${y}px`;
 }
 
 setInterval(() => {
