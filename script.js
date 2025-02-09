@@ -25,20 +25,16 @@ function moveButton() {
     const maxWidth = window.innerWidth - noButton.offsetWidth - 40;
     const maxHeight = window.innerHeight - noButton.offsetHeight - 40;
 
-    let speed = window.innerWidth < 600 ? 0.1 : 0.3; // Faster on mobile
-
     let x = Math.random() * maxWidth;
     let y = Math.random() * maxHeight;
 
     x = Math.max(20, Math.min(x, maxWidth));
     y = Math.max(20, Math.min(y, maxHeight));
 
-    noButton.style.transitionDuration = `${speed}s`; // Faster transitions
-    noButton.style.left = `${x}px`;
-    noButton.style.top = `${y}px`;
+    noButton.style.left = ${x}px;
+    noButton.style.top = ${y}px;
 }
 
-// Floating hearts every second
 setInterval(() => {
     const heart = document.createElement("div");
     heart.innerHTML = "💖";
